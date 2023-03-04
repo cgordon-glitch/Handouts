@@ -35,7 +35,13 @@ public class TurtleShapes {
      * @throws IllegalArgumentException if the radius or angle is invalid
      */
     public static double chordLength( double r, double angle ) {
-        throw new RuntimeException("Not implemented yet.");
+        double chordLength;
+        chordLength = 2* (Math.sin(angle/2));
+
+        if(r <= 0 || angle <= 0) {
+            throw new IllegalArgumentException("Invalid argument(s).");
+        }
+        return chordLength;
     }
 
     /**
@@ -73,7 +79,15 @@ public class TurtleShapes {
      * @throws IllegalArgumentException if the radius is 0.0 or less or sides is less than 10
      */
     public static void drawApproximateCircle( Turtle t, double r, int sides ) {
-        throw new RuntimeException("Not implemented yet.");
+        for(int i = 0; i <= sides; i++){
+            t.forward(chordLength(r, Math.atan(r)));
+        }
+        if(r == 0.0) {
+            throw new IllegalArgumentException("Illegal radius argument.");
+        }
+        else if(sides < 10){
+            throw new IllegalArgumentException("Not enough sides.");
+        }
     }
 
     /**
