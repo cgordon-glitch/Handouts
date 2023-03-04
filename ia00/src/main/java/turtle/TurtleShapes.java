@@ -81,6 +81,7 @@ public class TurtleShapes {
     public static void drawApproximateCircle( Turtle t, double r, int sides ) {
         for(int i = 0; i <= sides; i++){
             t.forward(chordLength(r, Math.atan(r)));
+            t.turn(Math.atan(r));
         }
         if(r == 0.0) {
             throw new IllegalArgumentException("Illegal radius argument.");
@@ -97,7 +98,15 @@ public class TurtleShapes {
      * @param pts a list of points for the turtle to move through
      */
     public static void drawThroughPoints( Turtle t, List<Point2D.Double> pts ) {
-        throw new RuntimeException("Not implemented yet.");
+        for(int i = 0; i < pts.size(); i++){
+            double moveX = pts.get(i).getX();
+            double moveY = pts.get(i).getY();
+            t.forward(moveX);
+            t.turn(90);
+            t.forward(moveY);
+            t.turn(180);
+        }
+
     }
 
     /**
@@ -106,7 +115,18 @@ public class TurtleShapes {
      * @param t a Turtle
      */
     public static void art( Turtle t ) {
-        throw new RuntimeException("Not implemented yet.");
+        t.forward(30);
+        t.turn(30);
+        t.forward(80);
+        t.turn(90);
+        t.forward(30);
+        t.turn(30);
+        t.forward(80);
+        t.turn(90);
+        t.forward(30);
+        t.turn(30);
+        t.forward(80);
+        t.turn(90);
     }
 
     /**
