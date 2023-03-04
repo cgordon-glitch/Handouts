@@ -66,7 +66,7 @@ public class TurtleShapes {
      * @return the distance from the turtle's current position to pt
      */
     public static double distanceToPoint( Turtle t, Point2D.Double pt ) {
-        throw new RuntimeException("Not implemented yet.");
+
     }
 
     /**
