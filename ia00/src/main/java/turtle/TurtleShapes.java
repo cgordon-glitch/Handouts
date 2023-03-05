@@ -43,7 +43,7 @@ public class TurtleShapes {
 
         if(r <= 0 || angle <= -1) {
             throw new IllegalArgumentException("Invalid argument(s).");
-        } else if (angle >= 359.5) {
+        } else if (angle >= 180) {
             throw new IllegalArgumentException("Illegal argument(s)1");
         }
         return chordLength;
@@ -60,7 +60,8 @@ public class TurtleShapes {
      * @return the change in the turtle's current heading that will turn it towards pt.
      */
     public static double calculateHeadingToPoint( Turtle t, Point2D.Double pt ) {
-        throw new RuntimeException("Not implemented yet.");
+        double toDegreesA = Math.toDegrees(Math.atan(t.getHeading()));
+        return toDegreesA;
     }
 
     /**
