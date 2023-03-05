@@ -1,8 +1,10 @@
 package turtle;
 
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class TurtleShapes {
 
@@ -40,6 +42,8 @@ public class TurtleShapes {
 
         if(r <= 0 || angle <= 0) {
             throw new IllegalArgumentException("Invalid argument(s).");
+        } else if (angle <= 360) {
+            throw new IllegalArgumentException("Illegal argument(s)1");
         }
         return chordLength;
     }
@@ -66,7 +70,18 @@ public class TurtleShapes {
      * @return the distance from the turtle's current position to pt
      */
     public static double distanceToPoint( Turtle t, Point2D.Double pt ) {
-        throw new RuntimeException("Not implemented yet.");
+        String turtleCurrentLocation = t.toString();
+        double turtleX = t.getX();
+        double turtleY = t.getY();
+        double desiredLocationX = pt.getX();
+        double desiredLocationY = pt.getY();
+        double distanceX;
+        double distanceY;
+        double slope;
+        distanceX = Math.abs((double)desiredLocationX - (double)turtleX);
+        distanceY = Math.abs((double)desiredLocationY - (double)turtleY );
+        slope = (double)distanceY/distanceX;
+        return slope;
     }
 
     /**

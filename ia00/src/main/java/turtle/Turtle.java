@@ -51,6 +51,12 @@ public class Turtle {
         return new Point2D.Double( location.x, location.y );
     }
 
+    public double getX(){
+        return location.getX();
+    }
+    public double getY(){
+        return location.getY();
+    }
     public double getHeading() {
         return Math.toDegrees(heading);
     }
