@@ -4,7 +4,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class TurtleShapes {
 
@@ -38,11 +38,12 @@ public class TurtleShapes {
      */
     public static double chordLength( double r, double angle ) {
         double chordLength;
-        chordLength = 2* (Math.sin(angle/2));
+        double angle2 = Math.toRadians(angle);
+        chordLength = 20* (Math.sin(angle2/2));
 
-        if(r <= 0 || angle <= 0) {
+        if(r <= 0 || angle <= -1) {
             throw new IllegalArgumentException("Invalid argument(s).");
-        } else if (angle <= 360) {
+        } else if (angle >= 359.5) {
             throw new IllegalArgumentException("Illegal argument(s)1");
         }
         return chordLength;
